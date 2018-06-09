@@ -1,9 +1,8 @@
 package com.iorthol.anathemachines;
 
+import com.iorthol.anathemachines.item.ModItems;
 import com.iorthol.anathemachines.proxy.CommonProxy;
-import com.iorthol.anathemachines.tab.CreativeTabLearningMod;
-import com.sun.corba.se.impl.presentation.rmi.StubFactoryFactoryProxyImpl;
-import jdk.nashorn.internal.runtime.linker.JavaAdapterFactory;
+import com.iorthol.anathemachines.tab.CreativeTabAnathemachines;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -12,29 +11,28 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = LearningMod.MODID, version = LearningMod.VERSION, name = LearningMod.NAME)
-public class LearningMod {
-    public static final String MODID = "learningmod";
+@Mod(modid = Anathemachines.MODID, version = Anathemachines.VERSION, name = Anathemachines.NAME)
+public class Anathemachines {
+    public static final String MODID = "anathemachines";
     public static final String VERSION = "1.0";
-    public static final String NAME = "LearningMod";
+    public static final String NAME = "Anathemachines";
 
     @SidedProxy(clientSide = "com.iorthol.anathemachines.proxy.ClientProxy", serverSide = "com.iorthol.anathemachines.proxy.CommonProxy")
     public static CommonProxy proxy;
 
     @Mod.Instance
-    public static LearningMod instance;
+    public static Anathemachines instance;
 
-    public static CreativeTabLearningMod tabLearningMod;
+    public static CreativeTabAnathemachines tabAnathemachines;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        tabLearningMod = new CreativeTabLearningMod(CreativeTabs.getNextID(), "tab_learningmod");
+        tabAnathemachines = new CreativeTabAnathemachines(CreativeTabs.getNextID(), "tab_anathemachines");
+        ModItems.preInit();
         proxy.preInit(event);
 
-        //proxy.
-        // proxy // (RESUME HERE, VIDEO 2 AT 12:01/28:05!)
-
+            // Video 3 11:07 1:08:01
     }
 
     @EventHandler
