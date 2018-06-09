@@ -1,6 +1,8 @@
 package com.iorthol.anathemachines;
 
 import com.iorthol.anathemachines.proxy.CommonProxy;
+import com.sun.corba.se.impl.presentation.rmi.StubFactoryFactoryProxyImpl;
+import jdk.nashorn.internal.runtime.linker.JavaAdapterFactory;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,10 +20,14 @@ public class LearningMod {
     public static CommonProxy proxy;
 
 
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-            // proxy // (RESUME HERE, VIDEO 2 AT 12:01/28:05!)
+
+
+        //proxy.
+        // proxy // (RESUME HERE, VIDEO 2 AT 12:01/28:05!)
 
     }
 
@@ -33,4 +39,12 @@ public class LearningMod {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
     }
+
+
+    public static void main(String[] args) {
+    LearningMod sample;
+    sample = new LearningMod();
+        sample.preInit(null);
+    }
+
 }
