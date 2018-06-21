@@ -32,7 +32,6 @@ public class Anathemachines {
         ModItems.preInit();
         proxy.preInit(event);
 
-            // Video 3 11:07 1:08:01
     }
 
     @EventHandler
